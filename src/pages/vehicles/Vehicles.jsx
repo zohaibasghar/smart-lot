@@ -20,7 +20,7 @@ function Vehicles() {
       setLoading(true);
       apiInstance
         .get(
-          `/cars/search?vin=${searchValue.vin}&make=${searchValue.make}&model=${searchValue.model}&year=${searchValue.year}&ticketNumber=${searchValue.ticketNumber}&licensePlate=${searchValue.licensePlate}`
+          `/cars/withpics?vin=${searchValue.vin}&make=${searchValue.make}&model=${searchValue.model}&year=${searchValue.year}&ticketNumber=${searchValue.ticketNumber}&licensePlate=${searchValue.licensePlate}`
         )
         .then((res) => setVehicles(res.data.data))
         .catch((err) => console.log(err))
@@ -155,11 +155,15 @@ function Vehicles() {
                   className="grid lg:grid-cols-2 grid-cols-1 border rounded-lg p-4 mb-4 bg-black"
                 >
                   <div className="md:p-4 md:pr-8">
-                    <img
-                      src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/05/30/118050.jpg"
-                      alt="toyota"
-                      className=""
-                    />
+                    {vehicle?.images?.length > 0 ? (
+                      <img
+                        src={vehicle.images[0]} // Display the first image if available
+                        alt="Vehicle Image"
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <div className="text-gray-500 text-sm">No Image</div> // Placeholder if no images
+                    )}
                   </div>
                   <div className=" grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
                     <div>
