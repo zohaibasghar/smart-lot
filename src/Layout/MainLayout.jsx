@@ -9,7 +9,9 @@ function MainLayout() {
       <TopBar />
       <div className="flex-row flex">
         <SideBar />
+        <div className="bg-[#929292] rounded-tl-[32px] w-full min-h-[90vh] p-4">
         <Outlet />
+        </div>
       </div>
     </div>
   );
