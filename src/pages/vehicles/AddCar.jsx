@@ -257,7 +257,7 @@ function AddCar() {
                   <img
                     key={url}
                     src={url}
-                    alt="image"
+                    alt={url}
                     className="h-40 w-40 object-contain rounded"
                   />
                 );

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaSearch } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { apiInstance } from "../../api/api";
 
 function Vehicles() {

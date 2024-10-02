@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiInstance } from "../../api/api";
-import { FaTrash } from "react-icons/fa";
+// import { FaTrash } from "react-icons/fa";
 
 function Locations() {
   const [searchValue, setSearchValue] = useState("");
@@ -29,13 +29,13 @@ function Locations() {
     [searchValue, locations]
   );
 
-  function handleLocationDelete(id) {
-    setLoading(true);
-    apiInstance
-      .delete(`/locations/${id}`)
-      .then(() => getLocations())
-      .catch((err) => console.log(err));
-  }
+  // function handleLocationDelete(id) {
+  //   setLoading(true);
+  //   apiInstance
+  //     .delete(`/locations/${id}`)
+  //     .then(() => getLocations())
+  //     .catch((err) => console.log(err));
+  // }
   return (
     <div className="">
       <div className="flex justify-between gap-4 flex-wrap">
