@@ -16,8 +16,10 @@ function Lots() {
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   }
+
   useEffect(() => {
     getLots();
+    return () => setLots([]);
   }, []);
 
   const filtered = useMemo(

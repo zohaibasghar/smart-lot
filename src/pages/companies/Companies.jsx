@@ -18,6 +18,8 @@ function Comapnies() {
   }
   useEffect(() => {
     getCompanies();
+
+    return () => setCompanies([]);
   }, []);
 
   const filtered = useMemo(
@@ -110,7 +112,9 @@ function Comapnies() {
               );
             })
           ) : (
-            <div className="text-center mt-10 text-white">No companies found!</div>
+            <div className="text-center mt-10 text-white">
+              No companies found!
+            </div>
           )}
         </div>
       )}

@@ -18,6 +18,7 @@ function Locations() {
   }
   useEffect(() => {
     getLocations();
+    return () => setLocations([]);
   }, []);
 
   const filtered = useMemo(
@@ -114,7 +115,9 @@ function Locations() {
               );
             })
           ) : (
-            <div className="text-center mt-10 text-white">No locations found!</div>
+            <div className="text-center mt-10 text-white">
+              No locations found!
+            </div>
           )}
         </div>
       )}

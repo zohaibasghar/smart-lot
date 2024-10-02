@@ -18,6 +18,8 @@ function Users() {
   }
   useEffect(() => {
     getUsers();
+
+    return () => setUsers([]);
   }, []);
 
   const filtered = useMemo(
